@@ -21,8 +21,6 @@ function draw() {
     x2 = xc + d * cos(90 + i),
     y2 = yc - d * cos(i);
   drawLine(x1, y1, x2, y2);
-
-
 }
 
 function drawLine(x1, y1, x2, y2) {

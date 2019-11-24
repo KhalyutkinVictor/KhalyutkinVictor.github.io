@@ -1,6 +1,7 @@
 //Khalyutkin Victor
 
 function keyPressed() {
+
     if (keyCode == 87 || keyCode == 38) {
         newSpeedY = -1;
         newSpeedX = 0;
@@ -17,4 +18,11 @@ function keyPressed() {
         newSpeedX = 1;
         newSpeedY = 0;
     }
+    if (keyCode == 32) {
+        if (start) {
+            start = false;
+        }
+        restartGame();
+    }
+    
 }

@@ -13,6 +13,9 @@ class Eats {
     }
 
     show() {
+        while (this.x * scl >= 525 && this.y * scl >= 481) {
+            this.spawn();
+        }
         strokeWeight(0);
         fill(0, 30, 255);
         rect(this.x * scl, this.y * scl, scl, scl);

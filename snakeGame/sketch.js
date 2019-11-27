@@ -9,6 +9,7 @@ let newSpeedX = 0, newSpeedY = 0;
 let start = true;
 let snake = new Snakes(50, 50);
 let eat = new Eats();
+let lose = true;
 let moveButtonLeft = new moveButtons(canvasSize.x - 220, canvasSize.y - 160, 50, 0, '<');
 let moveButtonRight = new moveButtons(canvasSize.x - 70, canvasSize.y - 160, 50, 0, '>');
 let moveButtonUp = new moveButtons(canvasSize.x - 145, canvasSize.y - 260, 50, 0, '^');
@@ -32,7 +33,9 @@ function draw() {
     }
     if (snake.hitTest()) {
         loseScreen();
+        lose = true;
     } else {
+        lose = false;
         background(44, 171, 93);
         snake.show();
         eat.show();
@@ -64,6 +67,12 @@ function loseScreen() {
 function mousePressed() {
     mx = mouseX;
     my = mouseY;
+    if (lose == true) {
+        lose = false;
+        start = false;
+        restartGame();
+        return false;
+    }
     if ((mx - moveButtonLeft.x) * (mx - moveButtonLeft.x) + (my - moveButtonLeft.y) * (my - moveButtonLeft.y) <= moveButtonLeft.r * moveButtonLeft.r) {
         move.left();
     }

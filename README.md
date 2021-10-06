@@ -1,2 +1,2 @@
-#Simple page 
+# Simple page 
 https://khalyutkinvictor.github.io
